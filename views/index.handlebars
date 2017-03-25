@@ -1,0 +1,59 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<div id="heading">
+				<h1>Eat-Da-Burger restaurant</h1>
+				<h3>Welcome Eater!</h3>
+				<h4>Input your burger choice and have at it!</h4>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<div id="orderArea">
+				<form class="burgerOrderForm" action="/" method="POST">
+					<input type="textbox" id="burgerOrder" name="name">
+					<button class="btn btn-info btn-lg" type="submit">Get me my Burger</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div id="burgers">
+				<div class="row">
+					<div class="col-xs-6">
+						{{#each burgers}}
+							{{#unless this.devoured}}
+								<div id="readyToDevour">
+									<p>Order#{{this.id}}</p>
+									<p class="name">Name: <span class="burgerName">{{this.burger_name}}</span></p>
+									<p class="name">Ordered At: {{this.date}}</p>
+									
+									<form action="/devour?_method=PUT" method="POST">
+								        <input type="hidden" name="devour" value="1">
+								        <input type="hidden" name="id" value="{{this.id}}">
+								        <button type="submit" class="btn btn-success">Devour it!</button>
+							        </form>
+							    </div>
+							{{/unless}}
+						{{/each}}
+					</div>
+					<div class="col-xs-6">
+						{{#each burgers}}
+							{{#if this.devoured}}
+								<div class="alreadyDevoured">
+									<p>Devoured#{{this.id}}</p>
+									<p class="name">Name: <span class="burgerName">{{this.burger_name}}</span></p>
+									<p class="name">Ordered At: {{this.date}}</p>
+								</div>
+							{{/if}}
+						{{/each}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
