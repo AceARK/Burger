@@ -3,7 +3,7 @@ var mysql = require("mysql");
 
 // Check if connection is using production JawsDB or local mysql db
 if(process.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
+    var connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
     var connection = mysql.createConnection({
       port: 3306,
