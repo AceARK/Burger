@@ -1,7 +1,8 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
-if (process.env.JAWSDB_URL) {
+// Check if connection is using production JawsDB or local mysql db
+if(process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
     var connection = mysql.createConnection({
