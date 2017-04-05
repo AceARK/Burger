@@ -2,9 +2,9 @@
 var mysql = require("mysql");
 
 // Check if connection is using production JawsDB or local mysql db
-// if(process.env.JAWSDB_URL) {
-//     var connection = mysql.createConnection(process.env.JAWSDB_URL);
-// } else {
+if(process.env.JAWSDB_URL) {
+    var connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
     var connection = mysql.createConnection({
       port: 3306,
       host: "wftuqljwesiffol6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
@@ -12,7 +12,7 @@ var mysql = require("mysql");
       password: "y3p4z82azs5ienqs",
       database: "burgers_db"
     });
-// }
+}
 
 // Make connection.
 connection.connect(function(err) {
