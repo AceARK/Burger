@@ -7,7 +7,7 @@ var moment = require("moment");
 // Handlebar helper function to format date
 var handlebarHelper = {
                          dateTimeFormat: function(dateTime) {
-                                    return moment(dateTime).format("ll, LT");
+                                    return moment(dateTime).format("ll, LT").toLocaleString();
                                   }
                       };
 
@@ -27,13 +27,18 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-  burger.insertOne([
-    "burger_name"
-  ], [
-    req.body.name
-  ], function() {
+  if(req.body.name !== "") {
+    burger.insertOne([
+      "burger_name"
+    ], [
+      req.body.name
+    ], function() {
+      res.redirect("/");
+    });
+  }else {
     res.redirect("/");
-  });
+  }
+  
 });
  
 router.put("/devour", function(req, res) {
