@@ -9,13 +9,15 @@ body {
     font-family: 'Baloo Bhaina', cursive;
     /*font-family: 'Patua One', cursive;*/
     font-size: 22px;
-    color: #ffdc2d;
+    /*color: #ffdc2d;*/
+    color: #fce36a;
     text-shadow: 2px 2px 5px #662307;
 }
 
 h1 {
     font-size: 50px;
     margin-bottom: -20px;
+    /*color: #ffe45e;*/
 }
 
 h3 {
@@ -89,6 +91,7 @@ input {
     font-size: 16px;
     margin-left: 85px;
     margin-top: -30px;
+    color: #ffdc2d;
 }
 
 .burgerName {
@@ -140,6 +143,11 @@ input {
 
 #getBurger {
     margin: 10px;
+}
+
+.devouredOrderedDate {
+    color: #fce36a;
+    font-size: 17px;
 }
 
  /* Styling for screens upto mac 13inch */
