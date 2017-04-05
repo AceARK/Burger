@@ -14,11 +14,12 @@ body {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 50px;
+    margin-bottom: -20px;
 }
 
 h3 {
-    font-size: 26px;
+    font-size: 24px;
 }
 
 h4 {
@@ -65,6 +66,7 @@ video#burgerVid {
 .burgerPic {
     height: 70px;
     width: 70px;
+    /*margin-top: 20px;*/
 }
 
 .wrapperPic {
@@ -74,11 +76,12 @@ video#burgerVid {
 
 input {
     color: black;
-    border-radius: 10px;
+    border-radius: 8px;
     border-style: inset;
     border-color: #ff8528;
     outline: none !important;
-    padding: 10px;
+    padding-top: 7px;
+    padding-left: 5px;
     font-size: 18px;
 }
 
@@ -137,4 +140,13 @@ input {
 
 #getBurger {
     margin: 10px;
+}
+
+ /* Styling for screens upto mac 13inch */
+@media screen and (max-height: 700px) {
+   .btn {
+        font-size: 22px;
+        padding: 6px;
+   }
+   
 }
