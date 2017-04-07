@@ -27,7 +27,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-  if(req.body.name !== "") {
+  if(req.body.name !== "" && !req.body.name.includes(";")) {
     burger.insertOne([
       "burger_name"
     ], [
@@ -36,7 +36,7 @@ router.post("/", function(req, res) {
       res.redirect("/");
     });
   }else {
-    res.redirect("/");
+    res.render("400");
   }
   
 });

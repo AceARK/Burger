@@ -9,8 +9,8 @@ body {
     font-family: 'Baloo Bhaina', cursive;
     /*font-family: 'Patua One', cursive;*/
     font-size: 22px;
-    color: #ffdc2d;
-    /*color: #fce36a;*/
+    color: #ffe500;
+    /*color: #ffd000;*/
     text-shadow: 2px 2px 5px #662307;
 }
 
@@ -80,7 +80,7 @@ input {
     color: black;
     border-radius: 8px;
     border-style: inset;
-    border-color: #ff8528;
+    border-color: #ffdc2d;
     outline: none !important;
     padding-top: 7px;
     padding-left: 5px;
@@ -146,8 +146,27 @@ input {
 }
 
 .devouredOrderedDate {
-    color: #fce36a;
+    color: #ffe500;
     font-size: 17px;
+}
+
+#errorMessage {
+    padding: 20px;
+    border: 2px solid #ffdc2d;
+    box-shadow: 2px 2px 5px #662307;
+    border-radius: 10px;
+    color: #ffe500;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#errorMessage a {
+    color: #00ffc3;
+}
+
+.options {
+    margin-left: 10px;
 }
 
  /* Styling for screens upto mac 13inch */
