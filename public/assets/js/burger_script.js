@@ -9,10 +9,10 @@ $(document).ready(function(){
 	console.log(currentTimeZoneOffsetInHours);
 
 	$(".devouredOrderedDate").each(function(item) {
-		var time = $(this).val();
+		var time = item.val();
 		console.log(time);
 		var timeFormattedToTimeZone = moment(time).subtract(currentTimeZoneOffsetInHours);
-		$(this).val(timeFormattedToTimeZone);
+		item.val(timeFormattedToTimeZone);
 		console.log(timeFormattedToTimeZone);
 	});
 
