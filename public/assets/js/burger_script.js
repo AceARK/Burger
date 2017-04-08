@@ -10,8 +10,10 @@ $(document).ready(function(){
 
 	$(".devouredOrderedDate").each(function(item) {
 		var time = $(this).val();
+		console.log(time);
 		var timeFormattedToTimeZone = moment(time).subtract(currentTimeZoneOffsetInHours);
 		$(this).val(timeFormattedToTimeZone);
+		console.log(timeFormattedToTimeZone);
 	});
 
 	// Random burger pic for each new burger
