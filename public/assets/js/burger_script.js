@@ -12,7 +12,7 @@ $(document).ready(function(){
 		var time = $(this).html();
 		console.log(time);
 		var timeFormattedToTimeZone = moment(time).subtract(currentTimeZoneOffsetInHours, "hours");
-		$(this).val(timeFormattedToTimeZone._d);
+		$(this).html(moment(timeFormattedToTimeZone._d).format("ll, LT"));
 		console.log(moment(timeFormattedToTimeZone._d).format("ll, LT"));
 	});
 
