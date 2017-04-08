@@ -3,6 +3,17 @@ $(document).ready(function(){
 	var wrapperSrcArray = ["/assets/img/wrapper1.png", "/assets/img/wrapper2.png"];
 	var usedBurgerSrcArray = [];
 
+	// Get current timezone offset for host device
+	var clientDate = new Date();
+	var currentTimeZoneOffsetInHours = clientDate.getTimezoneOffset() / 60;
+	console.log(currentTimeZoneOffsetInHours);
+
+	$(".devouredOrderedDate").each(function(item) {
+		var time = $(this).val();
+		var timeFormattedToTimeZone = moment(time).subtract(currentTimeZoneOffsetInHours);
+		$(this).val(timeFormattedToTimeZone);
+	});
+
 	// Random burger pic for each new burger
 	$(".readyToDevour").each(function(item) {
 		var randomBurgerSrcIndex = Math.floor(Math.random()*burgerSrcArray.length);

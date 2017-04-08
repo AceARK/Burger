@@ -7,7 +7,7 @@ var moment = require("moment");
 // Handlebar helper function to format date
 var handlebarHelper = {
                          dateTimeFormat: function(dateTime) {
-                                    return moment(dateTime).format("ll, LT").toLocaleString();
+                                    return moment(dateTime).format("ll, LT");
                                   }
                       };
 
