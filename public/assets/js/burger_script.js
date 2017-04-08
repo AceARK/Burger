@@ -21,13 +21,19 @@ $(document).ready(function(){
 
 	// Random burger pic for each new burger
 	$(".readyToDevour").each(function(item) {
-		var randomBurgerSrcIndex = Math.floor(Math.random()*burgerSrcArray.length);
-		while(usedBurgerSrcArray.indexOf(randomBurgerSrcIndex) != -1) {
-			randomBurgerSrcIndex = Math.floor(Math.random()*burgerSrcArray.length);
+		if(usedBurgerSrcArray.length < burgerSrcArray.length) {
+			var randomBurgerSrcIndex = Math.floor(Math.random()*burgerSrcArray.length);
+			while(usedBurgerSrcArray.indexOf(randomBurgerSrcIndex) != -1) {
+				randomBurgerSrcIndex = Math.floor(Math.random()*burgerSrcArray.length);
+			}
+			usedBurgerSrcArray.push(randomBurgerSrcIndex);
+			// Setting custom burger pic for each burger
+			$(this).find(".burgerPic").attr("src", burgerSrcArray[randomBurgerSrcIndex]);
+		} else {
+			var randomBurgerSrcIndex = Math.floor(Math.random()*burgerSrcArray.length);
+			// Setting custom burger pic for each burger
+			$(this).find(".burgerPic").attr("src", burgerSrcArray[randomBurgerSrcIndex]);
 		}
-		usedBurgerSrcArray.push(randomBurgerSrcIndex);
-		// Setting custom burger pic for each burger
-		$(this).find(".burgerPic").attr("src", burgerSrcArray[randomBurgerSrcIndex]);
 	});
 
 	// Wrapper pic for each devoured burger
