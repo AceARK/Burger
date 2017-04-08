@@ -14,6 +14,7 @@ A 'Devour it!' button will transfer the associated burger to the right panel mar
 * 'Ordered at' and 'Devoured at' time formatted to match client browser timezone.
 * Cool addictive raised buttons.
 * Responsive design.
+* Null or invalid values redirectes user to error page.
 
 ----------------------
 
