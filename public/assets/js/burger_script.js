@@ -11,7 +11,7 @@ $(document).ready(function(){
 	$(".devouredOrderedDate").each(function(item) {
 		var time = $(this).html();
 		console.log(time);
-		var timeFormattedToTimeZone = moment(time).subtract(currentTimeZoneOffsetInHours);
+		var timeFormattedToTimeZone = moment(time).subtract(currentTimeZoneOffsetInHours, "hours");
 		$(this).val(timeFormattedToTimeZone);
 		console.log(timeFormattedToTimeZone);
 	});
