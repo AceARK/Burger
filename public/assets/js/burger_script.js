@@ -6,14 +6,17 @@ $(document).ready(function(){
 	// Get current timezone offset for host device
 	var clientDate = new Date();
 	var currentTimeZoneOffsetInHours = clientDate.getTimezoneOffset() / 60;
-	console.log(currentTimeZoneOffsetInHours);
 
+	// Correct time offset that comes with setting using handlebars from server
 	$(".devouredOrderedDate").each(function(item) {
-		var time = $(this).html();
-		console.log(time);
-		var timeFormattedToTimeZone = moment(time).subtract(currentTimeZoneOffsetInHours, "hours");
-		$(this).html(moment(timeFormattedToTimeZone._d).format("ll, LT"));
-		console.log(moment(timeFormattedToTimeZone._d).format("ll, LT"));
+		// Only if program not run on local server
+		if(location.href.indexOf("//localhost") === -1) {
+			var time = $(this).html();
+			// Subtract timezone offset of client machine to datetime object displayed by handlebars
+			var timeFormattedToTimeZone = moment(time, "ll, LT").subtract(currentTimeZoneOffsetInHours, "hours");
+			// Send formatted date to html
+			$(this).html(moment(timeFormattedToTimeZone._d).format("ll, LT"));
+		}
 	});
 
 	// Random burger pic for each new burger
