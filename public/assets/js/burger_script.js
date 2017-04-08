@@ -13,7 +13,7 @@ $(document).ready(function(){
 		console.log(time);
 		var timeFormattedToTimeZone = moment(time).subtract(currentTimeZoneOffsetInHours, "hours");
 		$(this).val(timeFormattedToTimeZone._d);
-		console.log(timeFormattedToTimeZone._d);
+		console.log(moment(timeFormattedToTimeZone._d).format("ll, LT"));
 	});
 
 	// Random burger pic for each new burger
