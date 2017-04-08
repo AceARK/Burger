@@ -11,6 +11,7 @@ A 'Devour it!' button will transfer the associated burger to the right panel mar
 * UI that looks remarkably like a burger website, featuring a juicy burger in the background.
 * Tiny burger icons for each of the yet-to-be-devoured burgers created by user.
 * Tiny wrapper icons for all the devoured burgers.
+* 'Ordered at' and 'Devoured at' time formatted to match client browser timezone.
 * Cool addictive raised buttons.
 * Responsive design.
 
