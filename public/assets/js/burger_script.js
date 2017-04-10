@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var burgerSrcArray = ["/assets/img/baconMcDburger.png", "/assets/img/bbqBaconBurger.png", "/assets/img/chickenSandwich.png", "/assets/img/doubleBurger.png", "/assets/img/doubleCheeseDoubleBurgerbacon.png", "/assets/img/friedChickenSandwich.png"];
+	var burgerSrcArray = ["/assets/img/baconMcDburger.png", "/assets/img/burgerPic.png", "/assets/img/doubleBurgerLettuce.png", "/assets/img/chickenSandwich.png", "/assets/img/doubleBurger.png", "/assets/img/doubleCheeseDoubleBurgerbacon.png", "/assets/img/friedChickenSandwich.png"];
 	var wrapperSrcArray = ["/assets/img/wrapper1.png", "/assets/img/wrapper2.png"];
 	var usedBurgerSrcArray = [];
 
@@ -7,6 +7,11 @@ $(document).ready(function(){
 	var clientDate = new Date();
 	var currentTimeZoneOffsetInHours = clientDate.getTimezoneOffset() / 60;
 
+	$(".btn").on("click", function(event) {
+		$("#buttonClickSound")[0].currentTime = 0;
+    	$("#buttonClickSound")[0].play();
+	});
+	
 	// Correct time offset that comes with setting using handlebars from server
 	$(".devouredOrderedDate").each(function(item) {
 		// Only if program not run on local server
