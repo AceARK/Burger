@@ -27,4 +27,4 @@ A 'Devour it!' button will transfer the associated burger to the right panel mar
 
 ----------------------
 
-### Click [here](https://github.com/AceARK/BurgerSequelized) for the Sequelized version of this app, with customer associations. ###
+Click ### [here](https://github.com/AceARK/BurgerSequelized) ### for the Sequelized version of this app, with customer associations. 
